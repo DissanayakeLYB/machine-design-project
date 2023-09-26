@@ -5,11 +5,9 @@ low_lim = 1300  # Lower limit of the RPM
 
 v0 = 0
 v1 = 35 # First gear speed = speed at 30 degree inclined plane 
-
 v2 = (((up_lim - low_lim) * v1) / low_lim ) + v1
 v3 = (((up_lim - low_lim) * v2) / low_lim ) + v2
 v4 = (((up_lim - low_lim) * v3) / low_lim ) + v3
-
 v5 = 165 # Top speed
 
 maxRPM = (((v5-v4) * low_lim) / v4 ) + low_lim
@@ -27,7 +25,7 @@ num = len(rpm)  # number of points in the graph
 
 # print coordinates
 for x in range(num):
-    print(round(rpm[x],4), round(speed[x],4))
+    print(round(rpm[x],4), "     -     " , round(speed[x],4))
 
 # Plotting
 plt.figure(figsize=(8,6))
@@ -37,6 +35,9 @@ plt.xlabel("RPM")
 plt.xlabel("Speed (kmph)")
 plt.grid(True)
 plt.show()
+
+
+
 
 
 
