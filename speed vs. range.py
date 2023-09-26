@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt 
 
 up_lim = 1800 # Upper limit of the RPM
-low_lim = 1400  # Lower limit of the RPM
+low_lim = 1300  # Lower limit of the RPM
 
 v0 = 0
 v1 = 35 # First gear speed = speed at 30 degree inclined plane 
@@ -20,6 +20,15 @@ rpm = [0, up_lim, low_lim, up_lim, low_lim, up_lim, low_lim, up_lim, low_lim, ma
 # Corrseponding speed values (x-axis)
 speed = [v0, v1, v1, v2, v2, v3, v3, v4, v4, v5]
 
+# Max RPM value of the engine
+print("Max RPM : ", round(maxRPM, 4))
+
+num = len(rpm)  # number of points in the graph
+
+# print coordinates
+for x in range(num):
+    print(round(rpm[x],4), round(speed[x],4))
+
 # Plotting
 plt.figure(figsize=(8,6))
 plt.plot(speed, rpm, marker = 'x', linestyle='-' )
@@ -28,3 +37,9 @@ plt.xlabel("RPM")
 plt.xlabel("Speed (kmph)")
 plt.grid(True)
 plt.show()
+
+
+
+
+
+
